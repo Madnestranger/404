@@ -1,0 +1,383 @@
+$blue: #3877fa;
+$gray: #c7cad0;
+
+button {
+  background-color: $blue;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  padding: 15px 70px;
+  cursor: pointer;
+}
+
+.page-header-styles {
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  border-left: 3px solid $blue;
+  padding-left: 20px;
+  .number-page {
+    position: absolute;
+    right: -100px;
+    color: $blue;
+  }
+  .electrocar-title {
+    font-size: 30px;
+    max-width: 40vw;
+  }
+  .info-span {
+    font-size: 15px;
+    color: $gray;
+  }
+}
+
+.custom-container {
+  .electrocar-info-box {
+    .info-box-header {
+      @extend .page-header-styles;
+    }
+    .electrocar-details-box {
+      display: flex;
+      margin-top: 30px;
+      .image-box {
+        flex-basis: 50%;
+        position: relative;
+        img {
+          height: 580px;
+          position: relative;
+          left: -100px;
+          opacity: 1;
+          transition: all 0.3s ease;
+        }
+      }
+      .electrocar-info-box {
+        flex-basis: 50%;
+        .slider-controls {
+          display: flex;
+          align-items: center;
+          .prev, .next {
+            border: 3px solid lighten($gray, 15%);
+            padding: 20px 25px;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+          .next {
+            margin-left: 20px;
+          }
+        }
+        h1 {
+          margin: 50px 0;
+          text-transform: uppercase;
+          .model-name {
+            color: $blue;
+          }
+        }
+        .describe-box {
+          margin-bottom: 30px;
+          color: $gray;
+          max-width: 70%;
+          .model-name-in-info {
+            text-transform: uppercase;
+          }
+        }
+        .link-box {
+          color: $blue;
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          font-weight: bold;
+          text-decoration: none;
+          .line {
+            background-color: $blue;
+            height: 1px;
+            width: 50px;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  .catalog {
+    text-align: center;
+    margin-top: 100px;
+  }
+  .comparison-box {
+    .header {
+      @extend .page-header-styles;
+      border: none !important;
+      margin-top: 200px;
+      .electrocar-title-comparison {
+        font-size: 30px;
+        font-weight: bold;
+        .blue-text {
+          color: $blue;
+        }
+      }
+    }
+    .economy-result {
+      text-align: center;
+      color: $blue;
+      font-size: 26px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .main-compare-box {
+      display: flex;
+      .graph-content {
+        flex-basis: 20%;
+        height: 440px;
+        font-weight: bold;
+        position: relative;
+        display: flex;
+        .amount {
+          text-transform: uppercase;
+          text-align: left;
+          border-right: 3px solid $blue;
+          position: absolute;
+          bottom: 0;
+          transition: all 0.7s ease;
+          display: flex;
+          align-self: flex-end;
+          padding-right: 10px;
+          &.right {
+            padding-right: 0;
+            padding-left: 10px;
+            text-align: right;
+            border-right: none;
+            border-left: 3px solid $gray;
+            right: 0;
+          }
+        }
+        & > div {
+          display: inline-block;
+          width: 32%;
+          height: 100%;
+        }
+        .left-column {
+          color: $blue;
+        }
+        .right-column {
+          color: $gray;
+          justify-content: flex-end;
+        }
+        .measure {
+          color: $gray;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: space-between;
+          text-align: center;
+        }
+      }
+      .graph-legend {
+        margin-top: 30px;
+        text-align: center;
+        color: $gray;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .car {
+        flex-basis: 40%;
+        img {
+          height: 420px;
+          display: block;
+        }
+        &.right {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+        .description {
+          font-weight: bold;
+          text-align: left;
+          .car-name {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+          .car-price {
+            color: $blue;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    .calculate {
+      text-align: center;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (min-width: 1900px) {
+  .custom-container {
+    padding: 160px 270px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .custom-container .comparison-box .main-compare-box .car img {
+    height: 320px;
+    display: block;
+  }
+  .custom-container {
+    padding: 100px 100px;
+  }
+  .custom-container .comparison-box .main-compare-box .graph {
+    width: 30%;
+    flex-basis: 30%;
+  }
+  .page-header-styles .number-page, .custom-container .electrocar-info-box .info-box-header .number-page, .custom-container .comparison-box .header .number-page {
+    right: -50px;
+  }
+
+}
+
+@media (min-width: 750px) and (max-width: 1200px) {
+
+  .custom-container .comparison-box .header .electrocar-title-comparison {
+    font-size: 22px;
+  }
+
+  .custom-container .comparison-box .economy-result {
+    font-size: 20px;
+    margin: 30px 0;
+  }
+
+  .custom-container .comparison-box .main-compare-box .graph-legend {
+    font-size: 18px;
+  }
+
+  .custom-container .electrocar-info-box .electrocar-details-box .electrocar-info-box h1 {
+    margin: 20px 0;
+    text-transform: uppercase;
+    font-size: 25px;
+  }
+
+  .custom-container .comparison-box .main-compare-box .car {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .custom-container .electrocar-info-box .electrocar-details-box .image-box {
+    display: flex;
+    align-items: center;
+  }
+
+  .page-header-styles .electrocar-title, .custom-container .electrocar-info-box .info-box-header .electrocar-title, .custom-container .comparison-box .header .electrocar-title {
+    font-size: 25px;
+    max-width: 60vw;
+  }
+
+  .custom-container .electrocar-info-box .electrocar-details-box .image-box img {
+    height: 280px;
+    left: -30px;
+  }
+
+  .custom-container .comparison-box .main-compare-box .car img {
+    height: 150px;
+    display: block;
+  }
+
+  .custom-container {
+    padding: 50px;
+  }
+
+  .page-header-styles .number-page, .custom-container .electrocar-info-box .info-box-header .number-page, .custom-container .comparison-box .header .number-page {
+    right: -30px;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 760px) {
+
+  .page-header-styles .info-span, .custom-container .electrocar-info-box .info-box-header .info-span, .custom-container .comparison-box .header .info-span {
+    font-size: 10px;
+  }
+
+  .custom-container .comparison-box .main-compare-box {
+    .graph {
+      padding-top: 200px;
+    }
+    flex-direction: column;
+    .car {
+      order: 2;
+    }
+  }
+
+  .custom-container .comparison-box .header .electrocar-title-comparison {
+    font-size: 12px;
+  }
+
+  .custom-container .comparison-box .economy-result {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  .custom-container .comparison-box .main-compare-box .graph-legend {
+    font-size: 12px;
+  }
+
+  .custom-container .electrocar-info-box .electrocar-details-box .electrocar-info-box h1 {
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .custom-container .comparison-box .main-compare-box .car {
+    position: absolute;
+    &.right {
+      right: 0;
+    }
+  }
+
+  .custom-container .electrocar-info-box .electrocar-details-box .image-box {
+    display: flex;
+    align-items: center;
+  }
+
+  .page-header-styles .electrocar-title, .custom-container .electrocar-info-box .info-box-header .electrocar-title, .custom-container .comparison-box .header .electrocar-title {
+    font-size: 14px;
+    max-width: 60vw;
+  }
+
+  .custom-container .electrocar-info-box .electrocar-details-box .image-box img {
+    height: 95px;
+    left: -10px;
+  }
+
+  .custom-container .electrocar-info-box .electrocar-details-box .electrocar-info-box .describe-box {
+    width: 100%;
+    max-width: none;
+  }
+
+  .custom-container .comparison-box .main-compare-box .car img {
+    height: 110px;
+    display: block;
+  }
+
+  .custom-container {
+    padding: 20px;
+  }
+
+  .page-header-styles .number-page, .custom-container .electrocar-info-box .info-box-header .number-page, .custom-container .comparison-box .header .number-page {
+    right: -10px;
+  }
+
+}
+
+@media (min-width: 1600px) and (max-width: 1800px){
+
+  .custom-container .comparison-box .main-compare-box > div {
+    flex-basis: 33% !important;
+    width: 33%;
+  }
+
+  .custom-container {
+    padding: 100px 170px;
+  }
+}

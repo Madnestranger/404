@@ -1,0 +1,86 @@
+<div class="custom-container">
+  <div class="electrocar-info-box">
+    <div class="info-box-header">
+      <span class="electrocar-title">городской электрокар {{electrocar ? electrocar.title.split(' ')[0] : ''}} - выгодная инвестиция для бизнеса любого масштаба</span>
+      <span class="info-span">каталог автомобилей</span>
+      <span class="number-page">02</span>
+    </div>
+    <div class="electrocar-details-box">
+      <div class="image-box">
+        <img [src]="electrocar ? electrocar.img : ''" [ngStyle]="{'opacity': imageOpacity}" alt="Random first slide">
+      </div>
+      <div class="electrocar-info-box">
+        <div class="slider-controls">
+          <div class="prev" (click)="previousSlide()"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+          <div class="next" (click)="nextSlide()"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+        </div>
+        <h1>серия <span class="model-name">{{electrocar ? electrocar.title.split(' ')[1] : ''}}</span></h1>
+        <div class="describe-box">Серия <span class="model-name-in-info">{{electrocar ? electrocar.title.split(' ')[1] : ''}}</span>
+          привлекает потребителей своей высокой
+          функциональностью, довольно просто конституцией, невысокой стоимостью автомобиля и его содержания.
+          Идеально подходит для малого и среднего бизнеса.
+        </div>
+        <a class="link-box" href="javascript:;"><span>подробнее о модели </span><span class="line"></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="catalog">
+    <button class="go-to-catalog">перейти в каталог</button>
+  </div>
+  <div class="comparison-box">
+    <div class="header">
+      <span class="electrocar-title-comparison">
+        <span class="blue-text">рассчитайте свою выгоду</span><br>
+        <span>с электрокарами {{electrocar ? electrocar.title.split(' ')[0] : ''}}</span>
+      </span>
+      <span class="info-span">калькулятор экономичности</span>
+      <span class="number-page">05</span>
+    </div>
+    <div class="economy-result">вы экономите {{economy}} грн на 100 км</div>
+    <div class="main-compare-box">
+      <div class="car">
+        <img [src]="electrocar ? electrocar.img : ''" alt="">
+        <div class="description">
+          <span class="car-name">{{electrocar ? electrocar.title : ''}}</span>
+          <span class="car-price">{{electrocar ? electrocar.price + '$' : '$'}}</span>
+        </div>
+      </div>
+      <div class="graph">
+        <div class="graph-content">
+          <div class="left-column">
+            <div class="amount" [ngStyle]="{'height': electroHeight + 'px'}">{{electrocar?.price_100}} грн</div>
+          </div>
+          <div class="measure">
+            <div>300</div>
+            <div>270</div>
+            <div>240</div>
+            <div>210</div>
+            <div>180</div>
+            <div>150</div>
+            <div>120</div>
+            <div>90</div>
+            <div>60</div>
+            <div>30</div>
+            <div>0</div>
+          </div>
+          <div class="right-column">
+            <div class="amount right" [ngStyle]="{'height': carHeight + 'px'}">{{car?.price_100}} грн</div>
+          </div>
+        </div>
+        <div class="graph-legend">
+          Стоимость грн/100 км
+        </div>
+      </div>
+      <div class="car right">
+        <img [src]="car ? car.img : ''" alt="">
+        <div class="description">
+          <span class="car-name">{{car ? car.title : ''}}</span>
+          <span class="car-price">{{car ? car.price + '$' : '$'}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="calculate">
+      <button class="calculate">калькулятор выгоды</button>
+    </div>
+  </div>
+</div>

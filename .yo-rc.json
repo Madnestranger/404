@@ -1,0 +1,17 @@
+{
+  "generator-ngx-rocket": {
+    "version": "3.1.1",
+    "props": {
+      "appName": "TestTask404",
+      "target": [
+        "web"
+      ],
+      "pwa": false,
+      "ui": "bootstrap",
+      "auth": false,
+      "projectName": "test-task-404",
+      "packageManager": "npm",
+      "mobile": []
+    }
+  }
+}
